@@ -45,7 +45,7 @@ class pam::limits (
   }
   if $::osfamily == 'Suse' and $::lsbmajdistrelease == '10'  {
   } else {
-    common::mkdir_p { $limits_d_dir: }
+    pam::mkdir_p { $limits_d_dir: }
     file { 'limits_d':
       ensure  => directory,
       path    => $limits_d_dir,
